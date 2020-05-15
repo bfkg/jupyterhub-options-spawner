@@ -19,6 +19,7 @@ from .forms import (
     FormField,
 )
 
+import pdb
 
 
 class OptionsFormSpawner(wrapspawner.WrapSpawner):
@@ -70,4 +71,5 @@ class OptionsFormSpawner(wrapspawner.WrapSpawner):
         self.construct_child()
         self._apply_traits_from_fields(spawner_instance=self.child_spawner)
         self._set_trait_values_from_options(spawner_instance=self.child_spawner)
+        pdb.trace()
         return super().start(*args, **kwargs)
